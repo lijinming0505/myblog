@@ -1,22 +1,13 @@
-# Site settings
-title: "Typewriter"
-description: "So I was feeling nostalgic."
-baseurl: "/myblog"
-url: "http://alixedi.github.io"
+title: Brume
+author: Aigars Dzerviniks
+description: It's simple. It's easy to use. It's a Jekyll theme.
 
-# Build settings
-markdown: kramdown
-permalink: pretty
-highlighter: rouge
-paginate: 3
+highlighter: null
+permalink: /:title
 
-# Links
-links:
-  - title: "abt"
-    url: /about
-  - title: "twt"
-    url: http://twitter.com/alixedi
-  - title: "git"
-    url: http://github.com/alixedi
-  - title: "rss"
-    url: /feed.xml
+url:
+baseurl:
+
+# Custom options:
+# color_scheme: azul|ruby|amber|avocado
+# color_scheme: avocado
