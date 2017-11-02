@@ -1,19 +1,22 @@
-name: Wangana
-description:  Jekyll theme
+# Site settings
+title: "Typewriter"
+description: "So I was feeling nostalgic."
+baseurl: ""
+url: "http://alixedi.github.io"
 
-sass:
-  sass_dir: assets/css/_sass
-  style: :compressed
+# Build settings
+markdown: kramdown
+permalink: pretty
+highlighter: pygments
+paginate: 3
 
-url: https://iamnii.github.io/wangana
-permalink: /:year/:month/:title/
-owner:
-    name: #
-    twitter: #
-    github: #
-    disqus_shortname: #
-
-ga_id: #
-ga_username: #
-
-timezone: Africa/Accra
+# Links
+links:
+  - title: "abt"
+    url: /about
+  - title: "twt"
+    url: http://twitter.com/alixedi
+  - title: "git"
+    url: http://github.com/alixedi
+  - title: "rss"
+    url: /feed.xml
