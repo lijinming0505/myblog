@@ -1,37 +1,23 @@
-# Site configuration
-domain: "http://songroger.win"
-baseurl: "/myblog" # the subpath of your site, e.g. /blog/
-url: "http://songroger.github.io/" # the base hostname & protocol for your site
-permalink: /:title/
-avatar: http://7xof48.com1.z0.glb.clouddn.com/avatar.jpg
-about: http://7xof48.com1.z0.glb.clouddn.com/about.jpg
-favicon: http://7xof48.com1.z0.glb.clouddn.com/favicon.png
-basecss: 
-# Theme specific configuration
-title: songroger
-description: >
-  Hi there, My name is Luozhan.Song, usually I use "songroger" as my ID everywhere.
-  I was born and raised in Hunan China. 
-  I'm really fond of beautiful design, drawing etc.
+name: Wangana
+description:  Jekyll theme
 
-# Contact and social media links
-twitter_username: songrogero
-github_username: songroger
-facebook_username: song.roger.1
-instagram_username: songroger198
-linkedin_username: songroger
+sass:
+  sass_dir: assets/css/_sass
+  style: :compressed
 
-exclude: ['node_modules', 'gulpfile.js', 'package.json']
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "tables", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 
-kramdown:
-  input: GFM
+url: https://iamnii.github.io/wangana
+permalink: /:year/:month/:title/
+owner:
+    name: #
+    twitter: #
+    github: #
+    disqus_shortname: #
 
-# If U enable the comment, edit disqus or duoshuo account
-# before deploy your webpage
-enable_comment: false
-# disqus_account: songroger
+ga_id: #
+ga_username: #
 
-gems: ['jekyll-paginate']
-# Pagination
-paginate: 5
-paginate_path: /archive/page:num
+timezone: Africa/Accra

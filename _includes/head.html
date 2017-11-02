@@ -1,39 +1,28 @@
-<head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="songroger">
-
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | xml_escape | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | xml_escape | strip_html | strip_newlines }}{% endif %}">
-
-  <!-- Open graph data -->
-  <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:url" content="{% if page.title %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% else %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endif %}">
-  <meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}">
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | xml_escape | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | xml_escape | strip_html | strip_newlines }}{% endif %}">
-
-  <!-- Standard Stuff -->
-  <link rel="canonical" href="{% if page.title %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% else %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endif %}"/>
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}"/>
-
-  <!-- Favicons -->
-  <link rel="shortcut icon" href="{{ site.favicon }}">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-config" content="/assets/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- Styles -->
-  {% if site.basecss %}
-    <link rel="stylesheet" href="{{ site.basecss }}">
-  {% else %}
-    <style type="text/css">
-      {% include css/main.css %}
-    </style>
-  {% endif %}
-
-
-</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ site.name }} {% if page.title %} &mdash; {{ page.title }} {% endif %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="alternate" type="application/atom+xml" title="{{site.name}}" href="{{site.url}}/feed.xml">
+        <!-- Loop and attach page tags from page meta section -->
+        {% if page.tags %}
+        <meta name="keywords" content="{{ page.tags }}">
+        {% else %}
+        <meta name="keywords" content="">
+        {% endif %}
+        <link rel="icon" type="image/png" href="{{ "/favicon.png" | prepend: site.url }}">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.url }}">
+        <link href='https://fonts.googleapis.com/css?family=Poly:400,400italic' rel='stylesheet' type='text/css'>
+        <!-- JQuery -->
+        <script src="{{ "/assets/js/jquery-1.10.2.js" | prepend: site.url }}"></script>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+<body>
