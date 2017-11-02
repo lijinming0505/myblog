@@ -7,7 +7,7 @@ url: "http://alixedi.github.io"
 # Build settings
 markdown: kramdown
 permalink: pretty
-highlighter: pygments
+highlighter: rouge
 paginate: 3
 
 # Links
