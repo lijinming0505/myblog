@@ -1,32 +1,24 @@
-<nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" class="brand-logo" href="{{ "/" | relative_url }}">Logo</a>
-    {% assign default_paths = site.pages | map: "path" %}
-    {% assign page_paths = site.header_pages | default: default_paths %}
+  <header class="header">
 
-          <ul class="right hide-on-med-and-down">
-            <li><a href="{{ "/" | relative_url }}">Home </a></li>
-            {% if page_paths %}
-                {% for path in page_paths %}
-                    {% assign my_page = site.pages | where: "path", path | first %}
-                    {% if my_page.title %}
-                    <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}              
-          </ul>
+    {% if site.avatar %}
+      <div class="header__logo">
+        <a href="{{ site.baseurl }}/" class="header__link--logo">
+        <!-- <div class="spinner"></div> -->
+        <img src="{{ site.avatar }}"></a>
+      </div>
+    {% else %}
+      <h1 class="header__logo">
+        <a href="{{ site.baseurl }}/" class="header__link--logo">{{ site.title }}</a>
+      </h1>
+    {% endif %}
 
-          <ul id="nav-mobile" class="side-nav">
-            <li><a href="#">Home</a></li>
-                            {% if page_paths %}
-                {% for path in page_paths %}
-                    {% assign my_page = site.pages | where: "path", path | first %}
-                    {% if my_page.title %}
-                    <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-                    {% endif %}
-                {% endfor %}
-            {% endif %} 
-          </ul>        
+    <nav class="header__nav" role="navigation">      
+      <a href="{{ site.baseurl }}/archive/" class="header__link">Archive</a>
+      <a href="http://twitter.com/{{ site.twitter_username }}" class="header__link" target="_blank">Twitter</a>
+      <!-- <a href="http://github.com/{{ site.github_username }}" class="header__link" target="_blank">Github</a> -->
+      <a href="http://facebook.com/{{ site.facebook_username }}" class="header__link" target="_blank">Facebook</a>
+      <a href="{{ site.baseurl }}/about/" class="header__link">About</a>
+    </nav>
+  </header>
 
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
+  <main class="col">
